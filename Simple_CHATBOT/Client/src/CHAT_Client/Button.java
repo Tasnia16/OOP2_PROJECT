@@ -17,10 +17,10 @@ public class Button {
         b2 = new JRadioButton("Dark");
         b3 = new JRadioButton("Gray");
         b4=new JRadioButton("Blue");
-        buttonGroup.add(b1);
-        buttonGroup.add(b2);
-        buttonGroup.add(b3);
-        buttonGroup.add(b4);
+           buttonGroup.add(b1);
+           buttonGroup.add(b2);
+           buttonGroup.add(b3);
+           buttonGroup.add(b4);
         
         panel.add(b1);
         panel.add(b2);
@@ -28,14 +28,20 @@ public class Button {
         panel.add(b4);
     }
     
-    public JPanel getPanel(){
-        return panel;
-    }
+         public JPanel getPanel()
+             {
+                return panel;
+             }
     
-    public int getOption(){
-        if(b1.isSelected()) return 1;
-        else if(b2.isSelected()) return 2;
-        else if(b3.isSelected()) return 3;
-        else return 4;
+    public int getOption()
+    {
+        if(b1.isSelected())
+            return 1;
+        else if(b2.isSelected())
+            return 2;
+        else if(b3.isSelected())
+            return 3;
+        else
+            return 4;
     }
 }

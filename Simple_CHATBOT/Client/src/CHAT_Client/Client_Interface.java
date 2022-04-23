@@ -29,7 +29,8 @@ public class Client_Interface
     JScrollPane ScrollPane;
     DefaultCaret Caret;
     Font font;
-    
+
+
     Client_Interface(String User_name,int option,Socket socket,DataOutputStream out, DataInputStream in) throws IOException
     {
 
@@ -61,6 +62,7 @@ public class Client_Interface
         Caret = (DefaultCaret) TextArea.getCaret();
         Caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
+        //theme(intArray);
 
         if(option==1)
         {

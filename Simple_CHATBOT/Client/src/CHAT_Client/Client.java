@@ -3,14 +3,27 @@ import java.net.*;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.lang.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Client
 {
+    public static <E>void print_method(E[] input)
+    {
+        for (E element: input)
+        {
+            System.out.println("Name of the methods for client:"+element);
+            //System.out.println("\n");
+        }
+    }
+
+
      public static void main(String[] args)
         {
-
+            ArrayList<String>all_method=new ArrayList<String>();
             try{
+
+
                 Class clsobj2=String.class;
 
 
@@ -19,8 +32,11 @@ public class Client
                 for (Method method:methods)
                 {
                     String Method_name=method.getName();
-                    System.out.println("Name of the methods for client:"+Method_name);
+                    all_method.add(Method_name);
+                    //System.out.println("Name of the methods for client:"+Method_name);
                 }
+                print_method(all_method.toArray());
+
             }
 
 
@@ -30,6 +46,8 @@ public class Client
                 e.printStackTrace();
             }
 
+            Detail2 d2=new Detail2();
+            d2.memory2();
 
             int option = 0;
             String Error_Notification;
@@ -56,9 +74,9 @@ public class Client
              else
 
              {
-                 IP_Address = information.IP_Text_Field.getText();
-                 Port_Number = information.Port_Text_Field.getText();
-                 User_Name = information.User_Text_Field.getText();
+                   IP_Address = information.IP_Text_Field.getText();
+                   Port_Number = information.Port_Text_Field.getText();
+                   User_Name = information.User_Text_Field.getText();
 
              }
 
@@ -103,16 +121,17 @@ public class Client
         catch(IOException e)
         {
             Error_Notification = e.toString();
-            if(Error_Notification.charAt(9)=='U')
+               if(Error_Notification.charAt(9)=='U')
             {
                error =  new Error_Message("******INVALID HOST******");
             }
 
             else
             {
-               error =   new Error_Message("******WRONG PORT******");
+                 error =   new Error_Message("******WRONG PORT******");
             }
         }
+
 
 
     }
